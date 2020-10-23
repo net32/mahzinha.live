@@ -12,39 +12,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </head>
   <body>
-    <br />
     <div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col">
-            <!-- Add a placeholder for the Twitch embed -->
-            <div id="twitch-embed"></div>
-
-            <!-- Load the Twitch embed script -->
-            <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-            <!--
-            Create a Twitch.Embed object that will render
-            within the "twitch-embed" root element.
-            -->
-            <script type="text/javascript">
-            var embed = new Twitch.Embed("twitch-embed", {
-                width: 854,
-                height: 480,
-                channel: "mahziinha",
-                layout: "video-with-chat",
-                theme: "dark",
-                autoplay: true,
-                // only needed if your site is also embedded on embed.example.com and othersite.example.com 
-                parent: ["mahzinha.live", "www.mahzinha.live"]
-            });
-
-            embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
-                var player = embed.getPlayer();
-                player.play();
-            });
-            </script>
-        </div>
-    </div>
+    
+        <div id="twitch-embed"></div>
+        
+        <script src="https://embed.twitch.tv/embed/v1.js"></script>
+        
+        <script type="text/javascript">
+        var embed = new Twitch.Embed("twitch-embed", {
+            width: 1280,
+            height: 720,
+            channel: "mahziinha",
+            layout: "video-with-chat",
+            theme: "dark",
+            autoplay: true,
+            // only needed if your site is also embedded on embed.example.com and othersite.example.com 
+            parent: ["mahzinha.live", "www.mahzinha.live"]
+        });
+        embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+            var player = embed.getPlayer();
+            player.play();
+        });
+        </script>
+        
     </div>
   </body>
 </html>
